@@ -9,14 +9,14 @@ JSR GETVALUES
 
 OUTPUTS ;This section takes values stored in
 	;MIN, MAX, and AVG and outputs a string
-	; and the corisponding letter grade for
+	; and the corresponding letter grade for
 	;each variable. 
 
 LEA R0, AVGSTRING	;Output average string
 PUTS
 
 LD R1, CALCVALUES
-LDR R1, R1, #0	;Output for AVG
+LDR R1, R1, #0		;Output for AVG
 STI R1, X		
 JSR LETTER		;Get value of grade using function		
 LDI R0, ASCII_OUT
@@ -82,7 +82,7 @@ LETTER 	;This Subroutine takes a value stored in X
 	ADD R5, R1, #-16	;R5= X-59
 	ADD R5, R5, #-16
 	ADD R5, R5, #-16
-	ADD R5, R5, #-11	;Incramets of 16 
+	ADD R5, R5, #-11	;Increments of 16 
 	BRnz SAVELETTER		;if x <= 59 jump to SAVELETTER
 
 	ADD R4,R4, #-1
@@ -143,7 +143,7 @@ NEXT_NUM
 AND R1, R1, #0
 LD R3, ASCII_NUM ; ASCII offset for char to int conversion
 
-; We grab teh score one digit at a time understanding that the
+; We grab the score one digit at a time understanding that the
 ; first digit is the left most one in the number
 GET_DIGIT
 GETC
@@ -321,7 +321,7 @@ DIVIDE
 	AND R5, R1, #0
 	AND R6, R1, #0
 	
-	ADD R2, R2, #10		;The devisory is always 10
+	ADD R2, R2, #10		;The Divisor is always 10
 	LDI R1, Y		;Load the dividend into R1
 	
 	ADD R3, R1, #0		;Load the Dividend into R3
@@ -379,7 +379,7 @@ DIVIDE
 	ADD R6, R6, #1
 	STI R5, REMAINDER
 	STI R6, QUOTIENT
-	RET						;END OF DIVISION SUBROUTINE 
+	RET					;END OF DIVISION SUBROUTINE 
 
 ; Data
 CALCVALUES .FILL x4000
